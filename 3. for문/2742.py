@@ -1,4 +1,4 @@
-2742 기찍 N
+# 2742 기찍 N
 
 N = int(input())
 result = 1
