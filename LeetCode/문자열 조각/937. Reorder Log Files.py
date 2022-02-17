@@ -1,0 +1,15 @@
+# 937. 로그 파일 재정렬
+
+# sol1) lamb & + 연산자 이용
+class Solution:
+    def reorderLogFiles(self, logs: List[str]) -> List[str]:
+        letters, digits = [], []
+        for log in logs:
+            if log.split()[1].isdigit():
+                digits.append(log)
+            else:
+                letters.append(log)
+                
+        # 2개의 키를 람다 표현식으로 정렬
+        letters.sort(key=lambda x: (x.split()[1:], x.split()[0]))  #split(): 문자열 나누기 함수
+        return letters + digits
